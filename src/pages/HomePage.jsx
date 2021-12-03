@@ -14,7 +14,19 @@ import { ALL_COUNTRIES } from "../config";
 
 export const HomePage = ({ setCountries, countries }) => {
   const navigate = useNavigate();
+  const [filteredCountries, setFilteredCountries] = useState(countries);
+  const handleSearch = (search, region) => {
+    let data = [...countries];
 
+    if(region){
+      data = data.filter(c => c.region.includes(region))
+    }
+
+    if(search) {
+      data = data.filter(c => c.name.toLowerCase().includes(search.toLowerCase()))
+    }
+    setFilteredCountries(data)
+  }
   useEffect(() => {
     if (!countries.lenght)
       axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
@@ -22,9 +34,9 @@ export const HomePage = ({ setCountries, countries }) => {
   }, []);
   return (
     <>
-      <Controls />
+      <Controls onSearch={handleSearch} />
       <List>
-        {countries.map((c, id) => {
+        {filteredCountries.map((c, id) => {
           const countryInfo = {
             img: c.flags.png,
             name: c.name,

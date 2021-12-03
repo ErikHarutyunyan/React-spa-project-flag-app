@@ -1,9 +1,9 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // For API
-import axios from "axios";
+// import axios from "axios";
 
 // Components
 import { Header } from "./components/Header";
