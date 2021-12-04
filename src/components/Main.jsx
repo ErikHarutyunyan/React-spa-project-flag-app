@@ -1,4 +1,7 @@
+// Styled Components
 import styled from "styled-components";
+
+// Components
 import { Container } from "./Container";
 
 const Wrapper = styled.main`

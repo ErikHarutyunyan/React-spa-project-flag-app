@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+// Router
 import { useNavigate } from "react-router-dom";
 
 // For API
@@ -10,7 +12,7 @@ import { Card } from "../components/Card";
 import { Controls } from "../components/Controls";
 
 // API config
-import { ALL_COUNTRIES } from "../config";
+import { ALL_COUNTRIES } from "../api/config";
 
 export const HomePage = ({ setCountries, countries }) => {
   const navigate = useNavigate();
@@ -32,6 +34,11 @@ export const HomePage = ({ setCountries, countries }) => {
       axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
     // eslint-disable-next-line
   }, []);
+  useEffect(() => {
+    handleSearch()
+    // eslint-disable-next-line
+  }, [countries]);
+
   return (
     <>
       <Controls onSearch={handleSearch} />

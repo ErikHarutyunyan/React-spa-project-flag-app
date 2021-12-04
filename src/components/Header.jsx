@@ -1,9 +1,16 @@
-import styled from "styled-components";
-import React, { useState, useEffect } from "react";
-import { IoMoon, IoMoonOutline } from "react-icons/io5";
-import { Container } from "./Container";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
+// Styled Components
+import styled from "styled-components";
+
+// Raect Icon
+import { IoMoon, IoMoonOutline } from "react-icons/io5";
+
+// Components
+import { Container } from "./Container";
+
+// Router
+import { Link } from "react-router-dom";
 
 const HeaderElement = styled.header`
   box-shadow: var(--shadow);
@@ -30,7 +37,6 @@ const ModeSwitcher = styled.div`
   color: var(--color-text);
   font-size: var(--fs-sm);
   cursor: pointer;
-  /* font-weight: var(--fw-bold); */
   text-transform: capitalize;
 `;
 

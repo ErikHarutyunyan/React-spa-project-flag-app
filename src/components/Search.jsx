@@ -1,5 +1,7 @@
+// Styled Components
 import styled from "styled-components";
 
+// React Icon
 import { IoSearch } from "react-icons/io5";
 
 const InputContainer = styled.label`
@@ -10,6 +12,10 @@ const InputContainer = styled.label`
   box-shadow: var(--shadow);
   width: 100%;
   margin-bottom: 1rem;
+
+  & svg {
+    fill: var(--color-text);
+  }
 
   @media (min-width: 767px) {
     margin-bottom: 0;
@@ -25,7 +31,7 @@ const Input = styled.input.attrs({
   border: none;
   outline: none;
   color: var(--color-text);
-  background-color: var(--color-ui-base);
+  background-color: var(--color-bg);
 `;
 
 export const Search = ({ search, setSearch }) => {

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+
+// Components
 import { Search } from "./Search";
 import { CustomSelect } from "./CustomSelect";
+
+// Srtyled Components
 import styled from "styled-components";
 
 const options = [
@@ -23,15 +27,15 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Controls = ({onSearch}) => {
+export const Controls = ({ onSearch }) => {
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState("");
-  
+
   useEffect(() => {
-    const regionValue = region?.value || '';
-    onSearch(search, regionValue)
+    const regionValue = region?.value || "";
+    onSearch(search, regionValue);
     // eslint-disable-next-line
-  },[search, region])
+  }, [search, region]);
 
   return (
     <Wrapper>

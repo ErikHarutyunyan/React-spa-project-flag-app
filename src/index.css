@@ -1,4 +1,3 @@
-@import-normalize;
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
 * {
@@ -13,9 +12,7 @@
   --fw-light: 300;
   --fw-normal: 600;
   --fw-bold: 800;
-
   /* Other */
-
   --radii: 0.5rem;
 }
 
@@ -23,7 +20,7 @@ body[data-theme="dark"] {
   --color-text: hsl(0, 0%, 100%);
   --color-bg: hsl(2007, 26%, 17%);
   --color-ui-base: hsl(209, 23%, 22%);
-
+  --color-scroll: hsl(0, 0%, 98%);
   --shadow: rgba(245, 245, 245, 0.2) 0 0 8px;
 }
 
@@ -31,14 +28,30 @@ body[data-theme="light"] {
   --color-text: hsl(200, 15%, 8%);
   --color-bg: hsl(0, 0%, 98%);
   --color-ui-base: hsl(0, 0%, 100%);
-
+  --color-scroll: hsl(2007, 26%, 17%);
   --shadow: rgba(149, 157, 245, 0.2) 0 8px 24px;
 }
 
 body {
   margin: 0;
   font-family: var(--family);
-  color: var(--colors-text);
+  color: var(--color-text);
   font-weight: var(--fw-normal);
   background-color: var(--color-bg);
+}
+
+/* Scroll Custom Style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: var(--shadow);
+  border-radius: var(--radii);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scroll);
+  border-radius: var(--radii);
+  border: 0.12rem solid var( --color-bg);
 }

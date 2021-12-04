@@ -1,3 +1,4 @@
+// Srtyled Components
 import styled from "styled-components";
 
 const Wrapper = styled.article`
@@ -42,10 +43,10 @@ const CardListItem = styled.li`
   }
 `;
 
-export const Card = ({img, name, info = [], onClick}) => {
+export const Card = ({ img, name, info = [], onClick }) => {
   return (
     <Wrapper onClick={onClick}>
-      <CardImage src={img} alt={name}/>
+      <CardImage src={img} alt={name} />
       <CardBody>
         <CardTitle>{name}</CardTitle>
         <CardList>
